@@ -1,0 +1,14 @@
+.chat {
+  box-sizing: border-box;
+  width: 100%;
+  grid-column: 2;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 1rem;
+  max-height: 600px;
+  margin: 1rem;
+}
+
+h2{
+
+  text-align: center;}

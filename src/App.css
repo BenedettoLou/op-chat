@@ -1,0 +1,11 @@
+#root {
+
+
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-row: auto;
+  width: 100%;
+}
+
+
