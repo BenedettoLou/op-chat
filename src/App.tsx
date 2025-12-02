@@ -5,6 +5,7 @@ import Login from './component/login.tsx'
 import Chat from './component/chat.tsx'
 import { logoutUser } from './actions/login.tsx'
 import FreeSpaces from './component/free_spaces.tsx'
+import { Link } from 'react-router'
 function App() {
 
   let [isLogged] = useState(localStorage.getItem("logged"))
@@ -26,8 +27,8 @@ function App() {
       {isLogged === "true" ? <div className="rightSection">
         <Chat></Chat>
         <div className="buttons">
-          <button>Emergency</button>
-          <button>See clinic folders</button>
+          <Link to="emergency">Emergency</Link>
+          <Link to="folders">See clinic folders</Link>
         </div>
       </div>
         : ""}
