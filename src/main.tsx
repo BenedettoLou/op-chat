@@ -4,8 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import './index.css'
 import App from './App.tsx'
 import FoldersViewer from './component/folder-section/folders-viewer.tsx';
-import Patient from './component/folder-section/patient.tsx';
 import Emergency from './component/emergency-section/emergency.tsx';
+import PatientViewer from './component/folder-section/patient-viewer.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
@@ -13,9 +13,8 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="emergency" element={<Emergency />} />
-        <Route path='folders' element={<FoldersViewer></FoldersViewer>}>
-          <Route path=':patient' element={<Patient></Patient>}></Route>
-        </Route>
+        <Route path='folders' element={<FoldersViewer></FoldersViewer>}></Route>
+        <Route path='folders/:patient' element={<PatientViewer/>}></Route>
       </Routes>
 
     </StrictMode>

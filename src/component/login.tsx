@@ -1,5 +1,6 @@
 import { useFormStatus } from "react-dom";
 import { loginUser } from "../actions/login.tsx";
+import "./login.css"
 function Login() {
 
     let username = "";
@@ -16,7 +17,7 @@ function Login() {
     }
 
     return <>
-        <form action={() => loginUser(username, password)}>
+        <form id="login-form" action={() => loginUser(username, password)}>
             <h3>Log In to continue</h3>
             <input type="text" placeholder="Username" onChange={e => username = e.target.value} />
             <input type="password" placeholder="Password" onChange={e => password = e.target.value} />

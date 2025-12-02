@@ -12,26 +12,29 @@ function App() {
 
   return (
     <>
-      <header>
-        <h1>ERP Dolo</h1>
+      <div className="wrap">
+        <header>
+          <h1>ERP Dolo</h1>
 
-        {isLogged === "true" ?
-          <div id='welcome'><p >Welcome back, <b>{localStorage.getItem("user")}</b>.</p>
-            <button id='logout' onClick={logoutUser}>Logout</button>
+          {isLogged === "true" ?
+            <div id='welcome'><p >Welcome back, <b>{localStorage.getItem("user")}</b>.</p>
+              <button id='logout' onClick={logoutUser}>Logout</button>
+            </div>
+
+            : <Login />}
+          {isLogged === "true" ? <FreeSpaces /> : ""}
+        </header>
+
+        {isLogged === "true" ? <div className="rightSection">
+          <Chat></Chat>
+          <div className="buttons">
+            <Link to="emergency">Emergency</Link>
+            <Link to="folders">See clinic folders</Link>
           </div>
-
-          : <Login />}
-        {isLogged === "true" ? <FreeSpaces /> : ""}
-      </header>
-
-      {isLogged === "true" ? <div className="rightSection">
-        <Chat></Chat>
-        <div className="buttons">
-          <Link to="emergency">Emergency</Link>
-          <Link to="folders">See clinic folders</Link>
         </div>
+          : ""}
       </div>
-        : ""}
+
     </>
   )
 }

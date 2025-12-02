@@ -1,0 +1,25 @@
+#container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+    max-height: 80vh;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+#boxy {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#container > * {
+    cursor: pointer;
+}
+

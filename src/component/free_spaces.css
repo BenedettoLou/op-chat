@@ -1,5 +1,5 @@
 #box{
-    width: 630px;
+    max-width: 630px;
     height: 300px;
     border-radius: 10px;
     scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
@@ -8,6 +8,7 @@
     flex-direction: row;
     gap: 10px;
     flex-wrap: wrap;
+
     overflow-y: auto;
     background-color: rgba(0, 0, 0, 0.3);
 }

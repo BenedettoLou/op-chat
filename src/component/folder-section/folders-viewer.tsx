@@ -1,6 +1,7 @@
-import { useParams } from 'react-router';
+import { createRoutesFromChildren, Link, useParams } from 'react-router';
 import SearchBar from './search-bar.tsx'
 import Patient from './patient.tsx'
+import './folders-viewer.css'
 /**
  *
  * @returns a view to the folders in the db
@@ -11,19 +12,35 @@ import Patient from './patient.tsx'
 
 function FoldersViewer() {
 
-
-
     return <>
-        <div id="box">
+        <div id="boxy">
+            <Link to="/">Back</Link>
             <SearchBar></SearchBar>
-            <Patient></Patient>
-            <Patient></Patient>
-            <Patient></Patient>
-            <Patient></Patient>
-            <Patient></Patient>
+            <div id="container">
+                <Patient Serial='r3924'></Patient>
+                <Patient></Patient>
+                <Patient></Patient>
+                <Patient></Patient>
+                <Patient></Patient>
+            </div>
+
 
         </div>
     </>
 }
 
+function fetchPatients() {
+
+    for (let index = 0; index < 10; index++) {
+        return <Patient Serial="ie23"></Patient>
+
+    }
+    /**
+     * NOT WORKING YET
+     * fetch patients from backend api
+     */
+}
+
 export default FoldersViewer
+
+
