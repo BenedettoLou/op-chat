@@ -1,9 +1,14 @@
 import "./chat.css";
 function Chat() {
     return <>
-    <div className="chat">
-        <h2>CHAT</h2>
-    </div>
+        <div className="chat">
+            <div className="grid">
+                <h2>OP CHAT</h2>
+                <div id="live-chat"></div>
+                <button>Invia</button>
+            </div>
+
+        </div>
 
     </>
 }

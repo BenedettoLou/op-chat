@@ -34,5 +34,12 @@ function loginUser(username: string, password: string) {
     console.log("User logged in successfully.");
 }
 
-export { loginUser };
+function logoutUser() {
+    console.log("Logout...");
+    localStorage.setItem("logged", "false");
+    localStorage.removeItem("user");
+    window.location.href = "/";
+}
+
+export { loginUser, logoutUser };
 

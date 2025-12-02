@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import Login from './component/login.tsx'
 import Chat from './component/chat.tsx'
+import { logoutUser } from './actions/login.tsx'
 
 function App() {
 
@@ -13,10 +14,17 @@ function App() {
       <header>
         <h1>ERP Dolo</h1>
 
-        {isLogged === "true" ? <p>Welcome back, <b>{localStorage.getItem("user")}</b></p> : <Login />}
+        {isLogged === "true" ?
+          <div id='welcome'><p >Welcome back, <b>{localStorage.getItem("user")}</b>.</p>
+            <button id='logout' onClick={logoutUser}>Logout</button>
+          </div>
+
+          : <Login />}
 
       </header>
-      <Chat/>
+
+      {isLogged === "true" ? <Chat /> : ""}
+
 
     </>
   )

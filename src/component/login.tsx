@@ -19,7 +19,7 @@ function Login() {
         <form action={() => loginUser(username, password)}>
             <h3>Log In to continue</h3>
             <input type="text" placeholder="Username" onChange={e => username = e.target.value} />
-            <input type="text" placeholder="Password" onChange={e => password = e.target.value} />
+            <input type="password" placeholder="Password" onChange={e => password = e.target.value} />
             <Submit />
         </form>
     </>
