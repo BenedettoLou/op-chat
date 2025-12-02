@@ -4,7 +4,7 @@ import './App.css'
 import Login from './component/login.tsx'
 import Chat from './component/chat.tsx'
 import { logoutUser } from './actions/login.tsx'
-
+import FreeSpaces from './component/free_spaces.tsx'
 function App() {
 
   let [isLogged] = useState(localStorage.getItem("logged"))
@@ -20,12 +20,17 @@ function App() {
           </div>
 
           : <Login />}
-
+        {isLogged === "true" ? <FreeSpaces /> : ""}
       </header>
 
-      {isLogged === "true" ? <Chat /> : ""}
-
-
+      {isLogged === "true" ? <div className="rightSection">
+        <Chat></Chat>
+        <div className="buttons">
+          <button>Emergency</button>
+          <button>See clinic folders</button>
+        </div>
+      </div>
+        : ""}
     </>
   )
 }

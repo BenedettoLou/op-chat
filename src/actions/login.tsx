@@ -1,7 +1,7 @@
-/** #################
- * Login service
- * ################# */
-
+/**#################
+ *   Login service
+ * #################
+ */
 
 if (localStorage.getItem("logged") === null) {
     localStorage.setItem("logged", "false");
@@ -9,7 +9,7 @@ if (localStorage.getItem("logged") === null) {
 
 
 
-/**###################
+/**  * ###################
      *  Login function
      *
      * @param username - The username of the user
@@ -29,6 +29,12 @@ function loginUser(username: string, password: string) {
         localStorage.setItem("user", username); // not how it should be done, but for demo purposes
     }
     localStorage.setItem("logged", "true")
+
+    /**
+     * TODO: Fetch to backend to verify user credentials
+     * TODO: Handle errors and invalid credentials
+     * TODO: store user's serial number
+     */
 
     window.location.href = "/"; // Redirecting to the dashboard after login
     console.log("User logged in successfully.");
